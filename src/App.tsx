@@ -8,10 +8,10 @@ import { Container } from 'react-bootstrap';
 
 const App: React.FC<any> = () => {
   return (
-    <Router basename="/art-visibility">
+    <Router basename='/art-visibility'>
       <Header title='Painting' />
       <Container className='content' fluid>
-      <Navigations />
+        <Navigations />
       </Container>
       <Footer />
     </Router>

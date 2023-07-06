@@ -1,27 +1,43 @@
 import React, { useState } from 'react';
 import './styles.scss';
 import Offcanvas from 'react-bootstrap/esm/Offcanvas';
+import Nav from 'react-bootstrap/esm/Nav';
+import { Link } from 'react-router-dom';
+import Navbar from 'react-bootstrap/esm/Navbar';
+import { Container } from 'react-bootstrap';
 
-declare type Props = {};
+declare type Props = {
+  title: string;
+};
 
-const Drawer: React.FC<Props> = (props: Props) => {
-  const [show, setShow] = useState(true);
+const Drawer: React.FC<Props> = ({ title }: Props) => {
+  const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
   };
   return (
     <div className='drawer'>
-      <Offcanvas show={show} onHide={handleClose} placement='start' backdrop={false}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Art Visibility</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, at fugit exercitationem vero quo beatae porro id doloremque, excepturi debitis veniam accusamus dolorum suscipit maiores unde a eos nisi error possimus architecto sapiente. Velit veniam alias laboriosam voluptas officia, rerum placeat at culpa! Tenetur dolorem ratione voluptatum voluptas, est autem!
-          </p>
-        </Offcanvas.Body>
-      </Offcanvas>
+      <Offcanvas.Header closeButton>
+        <Offcanvas.Title>Art Visibility</Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body>
+        <Nav className='me-auto'>
+          <Navbar.Brand>{title}</Navbar.Brand>
+          <Nav.Link as={Link} to={'/'}>
+            Home
+          </Nav.Link>
+          <Nav.Link as={Link} to={'/paintings'}>
+            All Paintings
+          </Nav.Link>
+          <Nav.Link as={Link} to={'/about-us'}>
+            About us
+          </Nav.Link>
+          <Nav.Link as={Link} to={'/contact-us'}>
+            Contact us
+          </Nav.Link>
+        </Nav>
+      </Offcanvas.Body>
     </div>
   );
 };
