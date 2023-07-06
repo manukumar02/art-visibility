@@ -8,7 +8,7 @@ import { Container } from 'react-bootstrap';
 
 const App: React.FC<any> = () => {
   return (
-    <Router>
+    <Router basename="/art-visibility">
       <Header title='Painting' />
       <Container className='content' fluid>
       <Navigations />

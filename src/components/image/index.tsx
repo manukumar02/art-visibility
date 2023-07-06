@@ -11,8 +11,13 @@ export const ImageContainer: React.FC<Props> = ({
   imageSource,
   imageTitle,
 }: Props) => {
+
+  const handleImageClick = ()=> {
+    console.log('CARD CLICKEED')
+  }
+
   return (
-    <Card className='image-card' >
+    <Card className='image-card' onClick={handleImageClick}>
       <Card.Img variant='top' src={imageSource} />
       <Card.ImgOverlay style={{display: 'flex', flexDirection: 'row', alignContent: 'flex-end', alignItems: 'flex-end'}}>
         <Card.Body style={{paddingBottom: 0}}>

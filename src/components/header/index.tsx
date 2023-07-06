@@ -10,7 +10,7 @@ declare type Props = {
 const Header: React.FC<Props> = ({ title }: Props) => {
   return (
     <div className='header'>
-      <Navbar expand='lg' fixed='top' variant='dark' bg='dark'>
+      <Navbar expand='md' fixed='top' variant='dark' bg='dark'>
         <Navbar.Brand>{title}</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
