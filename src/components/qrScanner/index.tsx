@@ -18,7 +18,7 @@ const QrScanner: React.FC<Props> = (Props) => {
             console.info(error);
           }
         }}
-        constraints={{ facingMode: 'user' }}
+        constraints={{ facingMode: 'environment' }}
         containerStyle={{ width: '100%' }}
       />
       <p>{data}</p>
