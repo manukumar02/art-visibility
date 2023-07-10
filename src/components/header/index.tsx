@@ -1,9 +1,8 @@
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import './styles.scss';
-import { Link } from 'react-router-dom';
-import Drawer from '../drawer';
+import React from 'react';
 import { Container } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Drawer from '../drawer';
+import './styles.scss';
 
 declare type Props = {
   title: string;

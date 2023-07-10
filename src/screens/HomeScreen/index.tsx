@@ -1,9 +1,9 @@
-import { Container } from 'react-bootstrap';
-import HeroImage from '../../components/heroImage';
-import './styles.scss';
-import { useEffect, useState } from 'react';
-import { ImageType } from '../../core/interfaces/images.interface';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import QrScanner from '../../components/qrScanner';
+import { ImageType } from '../../core/interfaces/images.interface';
+import './styles.scss';
 
 const HomeScreen = () => {
   const [heroImage, setHeroImage] = useState<ImageType>();
@@ -23,7 +23,8 @@ const HomeScreen = () => {
   return (
     <Container className='main-container' fluid>
       <div className='hero-image'>
-        {heroImage?.url !== undefined && <HeroImage imageUrl={heroImage.url} />}
+        {/* {heroImage?.url !== undefined && <HeroImage imageUrl={heroImage.url} />} */}
+        <QrScanner />
       </div>
       <div className='image-category'>
         <h1>Categories</h1>

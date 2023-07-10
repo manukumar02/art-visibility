@@ -14,26 +14,26 @@ const Drawer: React.FC<Props> = ({ title }: Props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
-    setShow(false);
+    console.log('CLOSEDDDDDD HIDE')
   };
   return (
     <div className='drawer'>
-      <Offcanvas.Header closeButton>
+      <Offcanvas.Header closeButton onHide={handleClose}>
         <Offcanvas.Title>Art Visibility</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className='me-auto'>
           <Navbar.Brand>{title}</Navbar.Brand>
-          <Nav.Link as={Link} to={'/'}>
+          <Nav.Link as={Link} to={'/'} onClick={handleClose}>
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to={'/paintings'}>
+          <Nav.Link as={Link} to={'/paintings'} onClick={handleClose}>
             All Paintings
           </Nav.Link>
-          <Nav.Link as={Link} to={'/about-us'}>
+          <Nav.Link as={Link} to={'/about-us'} onClick={handleClose}>
             About us
           </Nav.Link>
-          <Nav.Link as={Link} to={'/contact-us'}>
+          <Nav.Link as={Link} to={'/contact-us'} onClick={handleClose}>
             Contact us
           </Nav.Link>
         </Nav>
